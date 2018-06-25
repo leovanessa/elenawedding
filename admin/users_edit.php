@@ -6,109 +6,16 @@
 
     include("resize.php");
 
-    $id = str_replace("'","&#39;",$_POST["idfilter"]);
+    $id = str_replace("'","&#39;",$_POST["idUsers"]);
 
-    $filter = str_replace("'","&#39;",$_POST["filter"]);
-    $description = str_replace("'","&#39;",$_POST["description"]);
-    $detailView = str_replace("'", "&#39;", $_POST["detailView"]);
-
-    $percorso="../images/category/";
-    $userfile_name = $_FILES["immagine"]["name"];
-    $nome_file = dimminomefile($userfile_name);
-    $tipofile = tipo_file($userfile_name);
-
-    //devo controllare che il file sia .jpg o .jpeg
-    if((trim($tipofile) <> "jpg") and (trim($tipofile) <> "jpeg") and (trim($tipofile) <> "png") and (trim($tipofile) <> "")){
-        //cancello l'immagine appena uploadata
-        @unlink($percorso.$userfile_name);
-
-        echo "ATTENZIONE! L'immagine deve avere estensione '.jpg' o '.jpeg' o '.png'";
-        exit;
-    }
-    else{
-
-        if(isset($_FILES["immagine"]) && $_FILES["immagine"]["size"]>0){
-
-            if (!move_uploaded_file($_FILES['immagine']['tmp_name'], $percorso . $nome_file . "." . $tipofile)){
-                print "Problemi con l'upload del file! Il file non ? stato caricato.";
-                exit;
-            }
-            else{
-                $strFoto = $nome_file . "." . $tipofile;
-                $resize = new resize;
-                $resize->urlimage = $percorso . $nome_file . "." . $tipofile;
-                $resize->fisso = 0;
-                $resize->maxX = 424;
-                $resize->latofisso = "X";
-                $resize->folder = "../images/category/";
-                //$resize->newName = "nuovonome.jpg";
-                $resize->go();
-            }
-
-            if(isset($_POST["img"]) and ($_POST["img"] != $_FILES['immagine']['name'])){
-                //richiamo la funzione per cancellare, eventualmente, la foto correlata
-                cancella_immagine($con, "filter", "id_filter", $id, "img", "../images/category/");
-            }
-
-        }
-
-        else{
-            if (isset($_POST["idfilter"])){
-                $strFoto = $_POST["img"];
-            }
-        }
-
-    }
-
-    $userfile_name_2 = $_FILES["immagine_2"]["name"];
-    $nome_file_2 = dimminomefile($userfile_name_2);
-    $tipofile_2 = tipo_file($userfile_name_2);
-
-    //devo controllare che il file sia .jpg o .jpeg
-    if((trim($tipofile_2) <> "jpg") and (trim($tipofile_2) <> "jpeg") and (trim($tipofile_2) <> "png") and (trim($tipofile_2) <> "")){
-        //cancello l'immagine appena uploadata
-        @unlink($percorso.$userfile_name_2);
-
-        echo "ATTENZIONE! L'immagine deve avere estensione '.jpg' o '.jpeg' o '.png'";
-        exit;
-    }
-    else{
-
-        if(isset($_FILES["immagine_2"]) && $_FILES["immagine_2"]["size"]>0){
-
-            if (!move_uploaded_file($_FILES['immagine_2']['tmp_name'], $percorso . $nome_file_2 . "." . $tipofile_2)){
-                print "Problemi con l'upload del file! Il file non ? stato caricato.";
-                exit;
-            }
-            else{
-                $strFoto_2 = $nome_file_2 . "." . $tipofile_2;
-                $resize = new resize;
-                $resize->urlimage = $percorso . $nome_file_2 . "." . $tipofile_2;
-                $resize->fisso = 0;
-                $resize->maxX = 850;
-                $resize->latofisso = "X";
-                $resize->folder = "../images/category/";
-                //$resize->newName = "nuovonome.jpg";
-                $resize->go();
-            }
-
-            if(isset($_POST["img_2"]) and ($_POST["img_2"] != $_FILES['immagine_2']['name'])){
-                //richiamo la funzione per cancellare, eventualmente, la foto correlata
-                cancella_immagine($con, "filter", "id_filter", $id, "img_description", "../images/category/");
-            }
-
-        }
-
-        else{
-            if (isset($_POST["idfilter"])){
-                $strFoto_2 = $_POST["img_2"];
-            }
-        }
-
-    }
+    $name = str_replace("'","&#39;",$_POST["name"]);
+    $surname = str_replace("'", "&#39;", $_POST["surname"]);
+    $email = str_replace("'", "&#39;", $_POST["email"]);
+    $number = str_replace("'", "&#39;", $_POST["number"]);
+    $vacancy = str_replace("'", "&#39;", $_POST["vacancy"]);
 
     //scrivo ed eseguo la query sul db
-    $query="UPDATE filter SET name='" .$filter. "', description='" .$description . "', img='".$strFoto."', img_description='".$strFoto_2."', view_detail=".(int)$detailView." WHERE id_filter = ".$id." ;";
+    $query="UPDATE users SET name='" .$name. "', surname='" .$surname . "', email='".$email."', number='".(int)$number."', vacancy=".(int)$vacancy." WHERE id = ".$id." ;";
 
     if(mysqli_query($con, $query)){
         $resultQuery = "Operazione effettuata correttamente!<br /><br />";
