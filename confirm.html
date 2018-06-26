@@ -97,51 +97,52 @@
 
 	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/img_bg_1.jpg);">
 		<div class="overlay"></div>
-		<div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
+		<div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_3.jpg);">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row animate-box">
 					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-						<h2>Are You Attending?</h2>
-						<p>Please Fill-up the form to notify you that you're attending. Thanks.</p>
+						<h2>Sei invitato!</h2>
+						<p>Conferma la tua presenza</p>
 					</div>
 				</div>
 				<div class="row animate-box">
 					<div class="col-md-10 col-md-offset-1">
 						<form id="form" class="form-inline" method='post'>
-							<div class="col-md-4 col-sm-4">
+							<div class="">
 								<div class="form-group">
 									<label for="name" class="sr-only">Name</label>
 									<input type="name" name="name" class="form-control" id="name" placeholder="Name">
 								</div>
 							</div>
-							<div class="col-md-4 col-sm-4">
+							<div class="">
 								<div class="form-group">
 									<label for="surname" class="sr-only">Surname</label>
-									<input type="surname" name="surname" class="form-control" id="surname" placeholder="surname">
+									<input type="surname" name="surname" class="form-control" id="surname" placeholder="Surname">
 								</div>
 							</div>
-							<div class="col-md-4 col-sm-4">
+							<div class="">
 								<div class="form-group">
 									<label for="email" class="sr-only">Email</label>
 									<input type="email" name="email" class="form-control" id="email" placeholder="Email">
 								</div>
 							</div>
-							<div class="col-md-4 col-sm-4">
+							<div class="">
 								<div class="form-group">
 									<label for="number" class="sr-only">numero partecipanti</label>
-									<input type="number" name="number" class="form-control" id="number" placeholder="numero partecipanti">
+									<input type="number" name="number" class="form-control" id="number" placeholder="Numero partecipanti">
 								</div>
 							</div>
-							<div class="col-md-4 col-sm-4">
+							<div class="">
+								<div for="vacancy" class="sr-only">Necessiti di pernottamento?</div>
+
 								<div class="form-group">
-									<label for="vacancy" class="sr-only">Necessiti di pernottamento?</label>
-									<input type="radio" name="vacancy" value="1"> Si <br>
-	                               	<input type="radio" name="vacancy" value="0" checked> No <br /><br />
+									<input type="radio" name="vacancy" value="1" class='label_confirm'> Si <br>
+	                <input type="radio" name="vacancy" value="0" checked class='label_confirm'> No <br /><br />
 								</div>
 							</div>
-							<div class="col-md-4 col-sm-4">
-								<button id="submit" type="submit" class="btn btn-default btn-block">I am Attending</button>
+							<div class="button_confirm">
+								<button id="submit" type="submit" class="btn btn-default btn-block">CONFERMA</button>
 							</div>
 						</form>
 					</div>
@@ -150,7 +151,7 @@
 		</div>
 	</header>
 
-	
+
 	<footer id="fh5co-footer" role="contentinfo">
 		<div class="container">
 
