@@ -359,6 +359,7 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5co-event, #fh5co-gallery {
   height: auto;
   float: left;
+  margin-top: 64px;
 }
 #fh5co-counter .display-t,
 #fh5co-counter .display-tc,
@@ -617,7 +618,9 @@ h1, h2, h3, h4, h5, h6, figure {
   letter-spacing: 2px;
 }
 .datetime {
-  color: #fff
+  color: #fff;
+  font-family: "Sacramento", Arial, serif;
+  font-size: 32px;
 }
 
 .timeline-body > p,
@@ -1035,7 +1038,7 @@ display: inline;
 #fh5co-couple,
 #fh5co-gallery,
 .fh5co-section {
-  padding: 7em 0;
+  padding: 2em 0;
   clear: both;
 }
 @media screen and (max-width: 768px) {
@@ -1290,7 +1293,7 @@ display: inline;
 }
 #fh5co-testimonial .wrap-testimony .testimony-slide blockquote p {
   font-style: italic;
-  color: #fff
+  color: #ecdea7;
   font-size: 20px;
   line-height: 1.6em;
 }
@@ -1373,6 +1376,7 @@ display: inline;
   left: 0;
   right: 0;
   bottom: 0;
+  background: rgba(0,0,0,0.3);
 }
 #fh5co-started .fh5co-heading h2 {
   color: #fff;
