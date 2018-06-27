@@ -618,9 +618,7 @@ h1, h2, h3, h4, h5, h6, figure {
   letter-spacing: 2px;
 }
 .datetime {
-  color: #fff;
-  font-family: "Sacramento", Arial, serif;
-  font-size: 32px;
+  color: #fff
 }
 
 .timeline-body > p,
@@ -1038,7 +1036,7 @@ display: inline;
 #fh5co-couple,
 #fh5co-gallery,
 .fh5co-section {
-  padding: 2em 0;
+  padding: 7em 0;
   clear: both;
 }
 @media screen and (max-width: 768px) {
@@ -1231,14 +1229,14 @@ display: inline;
 .fh5co-heading p {
   font-size: 18px;
   line-height: 1.5;
-  color: #828282;
+  color: #fff;
 }
 .fh5co-heading span {
   text-transform: uppercase;
   font-size: 13px;
   letter-spacing: 2px;
   font-weight: 600;
-  color: rgba(0, 0, 0, 0.4);
+  color: #fff;
 }
 
 #fh5co-testimonial .wrap-testimony {
@@ -1376,13 +1374,14 @@ display: inline;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.3);
+
 }
 #fh5co-started .fh5co-heading h2 {
-  color: #fff;
+  color: #eada9d;
 }
 #fh5co-started .fh5co-heading p {
-  color: rgba(255, 255, 255, 0.5);
+  color: #fff;
 }
 #fh5co-started .form-control {
   background: rgba(255, 255, 255, 0.2);
@@ -1939,10 +1938,11 @@ display: inline;
   width:100%;
 }
 .containerChurch .event-wrap {
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  /* border: 2px solid rgba(255, 255, 255, 0.5); */
   padding: 30px;
   float: left;
   text-align: center;
+      color: #fff;
 }
 .label_confirm  {
   color: #fff
