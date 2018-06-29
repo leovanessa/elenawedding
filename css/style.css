@@ -875,6 +875,7 @@ form label {
 #fh5co-header .display-tc h1,
 #fh5co-counter .display-tc h1,
 .fh5co-cover .display-tc h1 {
+      opacity: 0.7;
   margin-bottom: 0px;
   font-size: 100px;
   line-height: 1.5;
@@ -1904,9 +1905,7 @@ display: inline;
   text-align: left;
 }
 .mapChurch_container {
-  margin: 0 24px;
   padding-top: 24px;
-  padding-left: 30px;
 }
 .mapChurch {
   position: relative;
@@ -1947,9 +1946,54 @@ display: inline;
   height: 400px;
   border-radius: 100%;
 }
+
+@media only screen and (max-width: 600px) {
+  .location  {
+    width: 300px;
+    height: 280px;
+  }
+  .locationText  {
+    font-size:18px;
+    padding: 0;
+  }
+  .fh5co-heading  {
+    margin-top: 32px
+  }
+    .event-wrap  {
+      font-size:18px;
+    }
+    .simply-countdown > .simply-section  {
+      background: rgba(0,0,0,0.3)
+
+    }
+    .simply-countdown > .simply-section .simply-amount
+ {
+      color: #eada9d;
+
+    }
+}
+@media only screen and (max-width:270px) {
+  .location {
+    display: none
+  }
+}
+
 .locationText {
   height: 460px;
   display: inline;
+  padding: 30px;
+text-align: center;
+color: #fff;
+}
+.label_detail {
+  font-size: 20px;
+color: #fff;
+border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+display: block;
+padding-bottom: 20px;
+text-transform: uppercase;
+letter-spacing: 2px;
+
 }
 .locationContainer {
   width:100%;
